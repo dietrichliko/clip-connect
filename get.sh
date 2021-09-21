@@ -4,6 +4,8 @@
 #
 # Dietrich Liko
 
+echo "Install Split VON for CLIP" 1>&2
+
 die() {
     echo "$@" 1>&2
     exit 1
@@ -23,7 +25,7 @@ done
 TMPDIR="/tmp/clip-connect.$$"
 mkdir "$TMPDIR"
 
-curl -sL https://github.com/dietrichliko/clip-connect/tarball/main | tar xz -C "$TMPDIR"
+curl -sL https://github.com/dietrichliko/clip-connect/tarball/main | tar xz --strip-components 1 -C "$TMPDIR"
 
 CLIP_CONNECT_DIR="/opt/clip-connect"
 sudo mkdir "$CLIP_CONNECT_DIR"
