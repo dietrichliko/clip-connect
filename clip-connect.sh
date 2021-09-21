@@ -25,7 +25,7 @@ for path in "/opt/local/sbin/openconnect" "/usr/local/bin/openconnect"
 do
     [ -e $path ] && OPENCONNECT="$path"
 done
-[ -z $OPENCONNECT ] || _die "No openconnect binary found"
+[ -z $OPENCONNECT ] &&  _die "No openconnect binary found"
 
 VPN_URL="https://vpn.vbc.ac.at/AllSecure"
 VPN_SLICE="vpn-slice 172.16.0.0/16 cbe.vbc.ac.at jupyterhub.vbc.ac.at docs.vbc.ac.at"
