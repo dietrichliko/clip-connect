@@ -1,31 +1,32 @@
-# VBC Connect
+# CLIP-CONNECT: Split VPN for CLIP on MacOSX
 
-Establish a split VPN to CLIP on MacOSX
+HEPHY users need only a subset of the IP range and the DNS names 
+provided by the VPN server. Some subnets are also in conflict
+with subnets at Apostelgasse and and in  many home environments.
 
-VPN is based on openconnect, VPN splitting is
-provided by https://github.com/dlenski/vpn-slice
+The split VPN limits the IP range to 172.16.0.0/16  and DNS to relevant hosts
 
+* cbe.vbc.ac.at 
+* jupyterhub.vbc.ac.at 
+* docs.vbc.ac.at
+
+VPN is established on by (openconnect)[https://www.infradead.org/openconnect/] and 
+VPN splitting is provided by (vpn-slice)[https://github.com/dlenski/vpn-slice].
+
+The repository integrates the VPN into MacOSX environment using launchd.
 
 ## Installation
 
-Binary installations are dependiong on the tools 
-you use.
 
-In case you are useing  MacPorts
 
+````bash
 sudo port install python39
 sudo port install openconnect
-
+````
 
 Python installation
 
-git clone http://github.com/dietrichliko/vbc-connect
-
-cd vbc-connect
-
-python -m venv .venv
-. ./.venv/bin/activate
-
-pip install --upgrade pip wheel
-pip install -r requirements.txt
+````bash
+curl -sL https://git.io/Jz8cM | bash
+````
 
