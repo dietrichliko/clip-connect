@@ -28,7 +28,7 @@ done
 [ -z $OPENCONNECT ] &&  _die "No openconnect binary found"
 
 VPN_URL="https://vpn.vbc.ac.at/AllSecure"
-VPN_SLICE="vpn-slice 172.16.0.0/16 cbe.vbc.ac.at jupyterhub.vbc.ac.at docs.vbc.ac.at"
+VPN_SLICE="vpn-slice 172.16.0.0/16 cbe.vbc.ac.at clip-login-0.cbe.vbc.ac.at clip-login-1.cbe.vbc.ac.at jupyterhub.vbc.ac.at docs.vbc.ac.at"
 
 # shellcheck disable=SC1091
 source /opt/clip-connect/venv/bin/activate
